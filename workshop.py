@@ -97,7 +97,6 @@ for ticker, group in dataFrame.groupby('Company'):
 # Plot the performance
 performance.plot(figsize=(12, 6), title='Performance of $1000 Investment (2022-2023)')
 
-
 # Customize x-axis
 plt.xlabel('Month')
 plt.ylabel('Investment Value ($)')
@@ -106,7 +105,10 @@ plt.ylabel('Investment Value ($)')
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator())  # Spacing the months
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))  # Formatting as 'YYYY-MM'
 
-plt.legend(title='Company')
+# Place legend outside the plot
+plt.legend(title='Company', bbox_to_anchor=(1.05, 1), loc='upper left')
+
 plt.grid(True)
 
+plt.tight_layout()  # Adjust layout to fit everything
 plt.show()
