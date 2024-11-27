@@ -8,7 +8,6 @@ import matplotlib.dates as mdates
 
 # Load the CSV data  and store it in a DataFrame
 
-# [PRINT THE DATAFRAME TO SEE THE DATA]
 dataFrame = pd.read_csv('data.csv')
 
 # Looping over 4 columns 
