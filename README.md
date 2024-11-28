@@ -4,11 +4,11 @@ The Canva presentation will also be avaliable in the <i>Canva</i>  folder
 # Repository Breakdown 
 <list>
 <ol>
-The <b>data.csv </b> set contains daily stock market data for 10 companies, including key metrics like opening, closing, high, and low prices, along with trading volumes. It spans 25,160 rows, with data recorded across multiple open dates 
+-The <b>data.csv </b> set contains daily stock market data for 10 companies, including key metrics like opening, closing, high, and low prices, along with trading volumes. It spans 25,160 rows, with data recorded across multiple open dates 
 
-The <b>workshop.py</b> program is the program that is used in the workshop. Feel free to download the this file (alongside the data.csv file) and mess around with the code =). This python file mainly uses the python pandas library to solve the business problem 
+-The <b>workshop.py</b> program is the program that is used in the workshop. Feel free to download the this file (alongside the data.csv file) and mess around with the code =). This python file mainly uses the python pandas library to solve the business problem 
 
-The <b>Alternativeway.py</b> showcases an alternative way to solve the business problem -- through the use of dictionaries. Python is a very versitile language that this language offers various ways to solve problems. 
+-The <b>Alternativeway.py</b> showcases an alternative way to solve the business problem -- through the use of dictionaries. Python is a very versitile language that this language offers various ways to solve problems. 
 </ol>
 </list>
 

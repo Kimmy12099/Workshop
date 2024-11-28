@@ -7,12 +7,11 @@ import matplotlib.dates as mdates
 # ========================
 
 # Load the CSV data  and store it in a DataFrame
-
 dataFrame = pd.read_csv('data.csv')
 
 # Looping over 4 columns 
 for col in ['Close/Last', 'Open', 'High', 'Low']:
-    # Accessing specific columns using col 
+    # Accessing specific columns using col variable
     # replacing the dollar sign and then converting the string into float 
     # We need to replace the dollar sign because if we store it as a string, we can't do math operations on it, so we need to store it as a float or int, and 
     # if we have a dollar sign, it will cause an error 
@@ -56,6 +55,7 @@ for company, group in monthlyFrame.groupby('Company'):
         print(f"{names[i]} : {percentage_change:.2f}%")
 
     # yearly percentage change
+    #gets the first close price (2021-12) and the last close price (2022-12) and calculates the percentage change
     first_close = monthlyFrame.loc[(company, '2021-12'), 'Close/Last']
     last_close = monthlyFrame.loc[(company, '2022-12'), 'Close/Last']
     percentage_change = ((last_close - first_close) / first_close) * 100
@@ -79,10 +79,12 @@ for ticker, group in dataFrame.groupby('Company'):
     group = group.sort_values('Date')
     
     # Finds the intial price of the stock 
-    #
+    #finds the earliest date in the date column, between the specificed date range, selects the closing/last column; .iloc() retrieves first value from the filtered results 
+    #Iloc is used for integer indexing for the Dataframe data type; Iloc = Integer Location; gets the first value of the filtered results
+    #loc used to access data by labels 
     initial_price = group.loc[group['Date'] == group['Date'].min(), 'Close/Last'].iloc[0]
     
-    
+    # Calculate the investment value 
     group['investment_value'] = (group['Close/Last'] / initial_price) * 1000
     
     # Add to performance DataFrame
